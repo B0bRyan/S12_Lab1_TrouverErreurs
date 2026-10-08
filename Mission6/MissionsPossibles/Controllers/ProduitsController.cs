@@ -55,6 +55,7 @@ namespace Mission.Controllers
                 Text = i.Titre,
                 Value = i.Id.ToString()
             });
+            ViewBag.CategorieId = produit_VM.CategorieList;
             return View(produit_VM);
         }
 
