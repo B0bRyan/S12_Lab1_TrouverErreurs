@@ -49,7 +49,7 @@ namespace Mission.Controllers
         // GET: Produits/Create
         public IActionResult Create()
         {
-         
+            ViewBag.CategorieId = new SelectList(_context.Categories, "Id", "Titre");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace Mission.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Produit produit)
-        {
+        {           
             if (ModelState.IsValid)
             {
                 _context.Add(produit);
